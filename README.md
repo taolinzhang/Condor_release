@@ -26,7 +26,7 @@ opening promising avenues for future research.
 
 ## 🦅 Condor
 
-Condor is a two-stage data synthesis engine designed to generate high-quality data for supervised fine-tuning of large language models (LLMs). The human-preference performance of the model improves significantly when fine-tuned with Condor, without affecting the model's knowledge capacity. The Condor pipeline is divided into two stages: data synthesis and data refinement. InternLM3 
+Condor is a two-stage data synthesis engine adopted in InternLM3, designed to generate high-quality data for supervised fine-tuning of large language models (LLMs). The human-preference performance of the model improves significantly when fine-tuned with Condor, without affecting the model's knowledge capacity. The Condor pipeline is divided into two stages: data synthesis and data refinement. 
 
 - **Condor Void (Data Synthesis):**
 
@@ -36,7 +36,60 @@ Condor is a two-stage data synthesis engine designed to generate high-quality da
 
     In the data refinement stage, Condor employs a \textbf{Self-Reflection Refinement} strategy, allowing the model to iteratively optimize the responses by generating new critiques and obtain the final refined dataset.
 
+## 👨🏻‍💻 Prompt for Dataset Construction
 
+**Prompt for Question Synthesis**
+```
+Now we need to create high-quality SFT data for LLM training, so we need you to produce a batch of such data. You only
+need to create Questions. I will give you a theme and some examples of SFT data Questions. You need to create three
+Questions of different difficulty levels based on this new theme.\\
+Your Questions must meet the following requirements:\\
+1. You must strictly create only three Questions at a time. These three Questions must be in the domain of \textcolor{red}{[[domain]]}
+and the Questions should align with the given theme of \textcolor{red}{[[theme]]}.\\
+2. The Questions you create must have context and sufficient information; they should not be abrupt and directly ask the
+question.\\
+3. Your reply must strictly follow the format below. Your Questions need to be included between [Question Start] and
+[Question End], and the difficulty level should be indicated at the beginning, as in the following format:\\
+
+[Easy][Question Start]Question[Question End]
+
+[Medium][Question Start]Question[Question End]
+
+[Hard][Question Start]Question[Question End]
+
+4. Your Questions of different difficulty levels should be distinct and actually reflect the different levels of difficulty.\\
+\quad \\
+Here are some examples of high-quality SFT data Questions for \textcolor{red}{[[domain]]}:
+\textcolor{red}{[example list]}\\
+Now it's your turn. Please provide the three Questions of different difficulty levels you created about the theme of
+\textcolor{red}{[[theme]]} for \textcolor{red}{[[domain]]}, according to the requirements. Do not be confined by the theme; your Questions only need to
+be related to the theme. You can use your rich imagination, but note that you cannot copy the expression from the
+examples; you must have your own new expression:
+```
+
+**Prompt for Response Critic**
+```
+There is now a user’s question and a model’s response. You need to write a critique for this response, pointing out the
+strengths and weaknesses of the model’s answer to help the model improve its response.
+
+Your critique must strictly adhere to the following format:
+
+[Critique Start]
+
+[Strength Start]Strength[Strength End]
+
+[Weakness Start]Weakness[Weakness End]
+
+[Suggestion Start]Suggestion[Suggestion End]
+
+[Critique End]
+
+That is, you must place the strength, weakness, and suggestion in their respective sections.
+
+Here is the user’s question and the model’s response: \textcolor{red}{[dialogue]}
+
+Now it’s your turn. Please provide your Critique as required:
+```
 
 
 ## 🤗 Datasets and Model Zoo 
