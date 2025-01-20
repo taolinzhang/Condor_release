@@ -1,18 +1,14 @@
 # Condor
 
-TODO
-
 [![arXiv](https://img.shields.io/badge/arXiv-2403.12881-b31b1b.svg)](https://arxiv.org/abs/)
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
 ## ✨ Introduction  
 
-TODO
-
 [[🤗 HuggingFace Models](https://huggingface.co/internlm/)]
 [[🤗 HuggingFace Datasets](https://hf.co/datasets/internlm/Condor-SFT-20K)]
-<!-- [[🧰 OpenXLab](https://openxlab.org.cn/models/detail/OpenLMLab/)] -->
 [[📃 Paper](https://arxiv.org/abs/)]
+<!-- [[🧰 OpenXLab](https://openxlab.org.cn/models/detail/OpenLMLab/)] -->
 <!-- [[🌐 Project Page](https://internlm.github.io/)] -->
 
 > The quality of Supervised Fine-Tuning (SFT) data plays a critical role in enhancing the conversational capabilities of Large Language Models (LLMs).
@@ -30,7 +26,7 @@ opening promising avenues for future research.
 
 ## 🦅 Condor
 
-Condor is a two-stage data synthesis engine designed to generate high-quality data for supervised fine-tuning of large language models (LLMs). The human-preference performance of the model improves significantly when fine-tuned with Condor, without affecting the model's knowledge capacity. The Condor pipeline is divided into two stages: data synthesis and data refinement.
+Condor is a two-stage data synthesis engine designed to generate high-quality data for supervised fine-tuning of large language models (LLMs). The human-preference performance of the model improves significantly when fine-tuned with Condor, without affecting the model's knowledge capacity. The Condor pipeline is divided into two stages: data synthesis and data refinement. InternLM3 
 
 - **Condor Void (Data Synthesis):**
 
@@ -43,15 +39,18 @@ Condor is a two-stage data synthesis engine designed to generate high-quality da
 
 
 
-## 🚀 Quick Start
+## 🤗 Datasets and Model Zoo 
 
-TODO
+The datasets and models are available on Huggingface.
 
-The 7B model is available on Huggingface.
+|    Dataset    |                        Huggingface Repo                        |
+| :---------: | :------------------------------------------------------------: |
+| Condor Refine  | [Dataset Link](https://hf.co/datasets/internlm/Condor-SFT-20K)  |
 
 |    Model    |                        Huggingface Repo                        |
 | :---------: | :------------------------------------------------------------: |
 | Condor-7B  | [Model Link](https://huggingface.co/internlm/)  |
+| Condor-72B  | [Model Link](https://huggingface.co/internlm/)  |
 
 
 ## 🖊️ Citation
