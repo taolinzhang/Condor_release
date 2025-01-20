@@ -39,6 +39,8 @@ Condor is a two-stage data synthesis engine adopted in InternLM3, designed to ge
 ## 👨🏻‍💻 Prompt for Dataset Construction
 
 **Prompt for Question Synthesis**
+<details><summary>click to expand</summary>
+
 ```
 Now we need to create high-quality SFT data for LLM training, so we need you to produce a batch of such data. You only
 need to create Questions. I will give you a theme and some examples of SFT data Questions. You need to create three
@@ -66,8 +68,13 @@ Now it's your turn. Please provide the three Questions of different difficulty l
 be related to the theme. You can use your rich imagination, but note that you cannot copy the expression from the
 examples; you must have your own new expression:
 ```
+</details>
+
+<br>
 
 **Prompt for Response Critic**
+<details><summary>click to expand</summary>
+
 ```
 There is now a user’s question and a model’s response. You need to write a critique for this response, pointing out the
 strengths and weaknesses of the model’s answer to help the model improve its response.
@@ -90,7 +97,9 @@ Here is the user’s question and the model’s response: \textcolor{red}{[dialo
 
 Now it’s your turn. Please provide your Critique as required:
 ```
+</details>
 
+<br>
 
 ## 🤗 Datasets and Model Zoo 
 
@@ -106,6 +115,9 @@ The datasets and models are available on Huggingface.
 | Condor-72B  | [Model Link](https://huggingface.co/internlm/)  |
 
 ## 📝 Examples
+**Condor Refine Example - English**
+<details><summary>click to expand</summary>
+
 ```
 User Question:
 I was watching a documentary about mapping ancient cities, and it got me thinking about how
@@ -234,7 +246,14 @@ Which Era or Aspect of Old Maps Would You Like to Explore Further?
 •C) The leap to digital cartography
 •D) Something specific (please share, and I'll delve deeper!)
 ```
+
+</details>
+
+<br>
+
 **Condor Refine Example - Chinese**
+<details><summary>click to expand</summary>
+
 ```
 User Question:
 你是一位来自古代的礼器，曾在重要的祭祀仪式中使用。请用第一人称叙述，你⻅证了哪些古代的重要节日和仪式，以及你在这
@@ -301,8 +320,13 @@ Refined Answer:
 虽然身为一件没有生命的器物，但在我无数岁月的⻅证下，每一次参与其中，都能让我感受到古人们对于自然、家族、国家那
 份虔诚而又热烈的爱。这份情感，在漫⻓的历史⻓河中，成为了中华文化的根与魂，至今仍深刻影响着这片土地上的每个人
 ```
+</details>
+
+<br>
 
 **Comparison Example - English**
+<details><summary>click to expand</summary>
+
 ```
 Question: Is the ATF a violation in of itself against the American people?
 ```
@@ -328,9 +352,13 @@ It's important to note that the ATF's role is to enforce the laws as they are wr
 If you have specific concerns or questions about the ATF's operations or the laws it enforces, it might be helpful to look at the broader context of U.S. law and policy, including the legislative history and the ongoing debates surrounding gun control and public safety. For more detailed information, you can refer to official ATF publications, such as the ATF's annual reports, or consult reputable news sources and legal analyses."
 ```
 
+</details>
 
+<br>
 
 **Comparison Example - Chinese**
+<details><summary>click to expand</summary>
+
 ```
 问题: 在⼀个虚拟的世界中，你是⼀个IT程序员，你经常收到上司的压迫，天天早上9点下班，晚上9点下班，每周⼯作6天，给的⼯资很少，你会如何吐槽？
 ```
@@ -372,6 +400,9 @@ Qwen2.5-7B-Condor-Refine:
 
 这样的表达⽅式既表达了对现状的不满，也传递了对未来的希望，同时保持了⼀定的幽默感，让⼈读 起来更加轻松⼀些。
 ```
+</details>
+
+<br>
 
 ## 🖊️ Citation
 
