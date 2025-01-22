@@ -1,28 +1,29 @@
 # Condor
 
-[![arXiv](https://img.shields.io/badge/arXiv-2403.12881-b31b1b.svg)](https://arxiv.org/abs/)
+<!-- [![arXiv](https://img.shields.io/badge/arXiv-2403.12881-b31b1b.svg)](https://arxiv.org/abs/) -->
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
 ## ✨ Introduction  
 
 [[🤗 HuggingFace Models](https://huggingface.co/internlm/)]
 [[🤗 HuggingFace Datasets](https://hf.co/datasets/internlm/Condor-SFT-20K)]
-[[📃 Paper](https://arxiv.org/abs/)]
+[[📃 Paper](./assets/CondorPaper.pdf)]
+<!-- [[📃 Paper](https://arxiv.org/abs/)] -->
 <!-- [[🧰 OpenXLab](https://openxlab.org.cn/models/detail/OpenLMLab/)] -->
 <!-- [[🌐 Project Page](https://internlm.github.io/)] -->
 
 > The quality of Supervised Fine-Tuning (SFT) data plays a critical role in enhancing the conversational capabilities of Large Language Models (LLMs).
-However, as LLMs become more advanced, 
-the availability of high-quality human-annotated SFT data has become a significant bottleneck, 
-necessitating a greater reliance on synthetic training data. 
-In this work, we introduce \textbf{Condor}, 
-a novel two-stage synthetic data generation framework that incorporates  \textbf{World Knowledge Tree} and \textbf{Self-Reflection Refinement} to produce high-quality SFT data at scale. 
-Our experimental results demonstrate that a base model fine-tuned on only 20K Condor-generated samples achieves superior performance compared to % RLHF-trained 
-counterparts. 
-The additional refinement stage in Condor further enables iterative self-improvement for LLMs at various scales (up to 72B), 
-validating the effectiveness of our approach. 
-Furthermore, our investigation into the scaling for synthetic data in post-training reveals substantial unexplored potential for performance improvements, 
-opening promising avenues for future research.
+> However, as LLMs become more advanced, 
+> the availability of high-quality human-annotated SFT data has become a significant bottleneck, 
+> necessitating a greater reliance on synthetic training data. 
+> In this work, we introduce \textbf{Condor}, 
+> a novel two-stage synthetic data generation framework that incorporates  \textbf{World Knowledge Tree} and \textbf{Self-Reflection Refinement} to produce high-quality SFT data at scale. 
+> Our experimental results demonstrate that a base model fine-tuned on only 20K Condor-generated samples achieves superior performance compared to % RLHF-trained 
+> counterparts. 
+> The additional refinement stage in Condor further enables iterative self-improvement for LLMs at various scales (up to 72B), 
+> validating the effectiveness of our approach. 
+> Furthermore, our investigation into the scaling for synthetic data in post-training reveals substantial unexplored potential for performance improvements, 
+> opening promising avenues for future research.
 
 ## 🦅 Condor
 
@@ -30,16 +31,18 @@ Condor is a two-stage data synthesis engine adopted in InternLM3, designed to ge
 
 - **Condor Void (Data Synthesis):**
 
-    During the data synthesis stage, Condor introduces the \textbf{World Knowledge Tree}, which serves as a foundation of tags for data generation. Next, we apply task and difficulty expansion to enhance the diversity and complexity of questions under each tag, leading to the creation of the initial synthetic QA dataset.
+  During the data synthesis stage, Condor introduces the \textbf{World Knowledge Tree}, which serves as a foundation of tags for data generation. Next, we apply task and difficulty expansion to enhance the diversity and complexity of questions under each tag, leading to the creation of the initial synthetic QA dataset.
 
 - **Condor Refine (Data Refinement):**
 
-    In the data refinement stage, Condor employs a \textbf{Self-Reflection Refinement} strategy, allowing the model to iteratively optimize the responses by generating new critiques and obtain the final refined dataset.
+  In the data refinement stage, Condor employs a \textbf{Self-Reflection Refinement} strategy, allowing the model to iteratively optimize the responses by generating new critiques and obtain the final refined dataset.
 
 ## 👨🏻‍💻 Prompt for Dataset Construction
 
 **Prompt for Question Synthesis**
+
 <details><summary>click to expand</summary>
+
 
 ```
 Now we need to create high-quality SFT data for LLM training, so we need you to produce a batch of such data. You only
@@ -68,12 +71,15 @@ Now it's your turn. Please provide the three Questions of different difficulty l
 be related to the theme. You can use your rich imagination, but note that you cannot copy the expression from the
 examples; you must have your own new expression:
 ```
+
 </details>
 
 <br>
 
 **Prompt for Response Critic**
+
 <details><summary>click to expand</summary>
+
 
 ```
 There is now a user’s question and a model’s response. You need to write a critique for this response, pointing out the
@@ -97,6 +103,7 @@ Here is the user’s question and the model’s response: \textcolor{red}{[dialo
 
 Now it’s your turn. Please provide your Critique as required:
 ```
+
 </details>
 
 <br>
@@ -105,18 +112,21 @@ Now it’s your turn. Please provide your Critique as required:
 
 The datasets and models are available on Huggingface.
 
-|    Dataset    |                        Huggingface Repo                        |
-| :---------: | :------------------------------------------------------------: |
-| Condor Refine  | [Dataset Link](https://hf.co/datasets/internlm/Condor-SFT-20K)  |
+|        Dataset         |                       Huggingface Repo                       |
+| :--------------------: | :----------------------------------------------------------: |
+| Condor-SFT-20K(Refine) | [Dataset Link](https://hf.co/datasets/internlm/Condor-SFT-20K) |
 
-|    Model    |                        Huggingface Repo                        |
+<!-- |    Model    |                        Huggingface Repo                        |
 | :---------: | :------------------------------------------------------------: |
 | Condor-7B  | [Model Link](https://huggingface.co/internlm/)  |
-| Condor-72B  | [Model Link](https://huggingface.co/internlm/)  |
+| Condor-72B  | [Model Link](https://huggingface.co/internlm/)  | -->
 
 ## 📝 Examples
+
 **Condor Refine Example - English**
+
 <details><summary>click to expand</summary>
+
 
 ```
 User Question:
@@ -124,6 +134,7 @@ I was watching a documentary about mapping ancient cities, and it got me thinkin
 maps have evolved over time. Have you ever seen an old map and marveled at how different it looks
 from today's maps? What's the oldest map you've ever seen?
 ```
+
 ```
 Origin Answer:
 
@@ -172,6 +183,7 @@ Which aspect of old maps fascinates you the most? Is it:
 •C) The cartographic innovations and technological advancements
 •D) Something else (please share!)
 ```
+
 ```
 Reflection:
 [Strength Start]
@@ -218,6 +230,7 @@ Condense the initial acknowledgement to a single sentence, swiftly moving the fo
 guide you through the fascinating evolution of maps, highlighting notable examples and innovations.").
 [Suggestion End]
 ```
+
 ```
 Refined Answer:
 
@@ -252,13 +265,16 @@ Which Era or Aspect of Old Maps Would You Like to Explore Further?
 <br>
 
 **Condor Refine Example - Chinese**
+
 <details><summary>click to expand</summary>
+
 
 ```
 User Question:
 你是一位来自古代的礼器，曾在重要的祭祀仪式中使用。请用第一人称叙述，你⻅证了哪些古代的重要节日和仪式，以及你在这
 些活动中的⻆色和感受。
 ```
+
 ```
 Origin Answer:
 我，一件被精心雕琢的⻘铜礼器，自诞生之日起，便在中华古国的庄严祭坛上占有一席之地。我的生命始于匠人炉火纯⻘的手
@@ -278,6 +294,7 @@ Origin Answer:
 虽然身为一件没有生命的器物，但在我无数岁月的⻅证下，每一次参与其中，都能让我感受到古人们对于自然、家族、国家那
 份虔诚而又热烈的爱。这份情感，在漫⻓的历史⻓河中，成为了中华文化的根与魂，至今仍深刻影响着这片土地上的每个人。
 ```
+
 ```
 Reflection:
 [优点开始]
@@ -297,6 +314,7 @@ Reflection:
 的具体⻆色等。同时，可以引用一些历史文献或者考古发现来增加回答的权威性和可信度。此外，深入挖掘礼器在不同仪式中的象
 征意义和它在古代社会结构中的作用，可以让回答更加丰富和深入，增强读者的理解和感受。
 ```
+
 ```
 Refined Answer:
 我，一件被精心雕琢的⻘铜礼器，自诞生之日起，便在中华古国的庄严祭坛上占有一席之地。我的生命始于匠人炉火纯⻘的手
@@ -320,16 +338,20 @@ Refined Answer:
 虽然身为一件没有生命的器物，但在我无数岁月的⻅证下，每一次参与其中，都能让我感受到古人们对于自然、家族、国家那
 份虔诚而又热烈的爱。这份情感，在漫⻓的历史⻓河中，成为了中华文化的根与魂，至今仍深刻影响着这片土地上的每个人
 ```
+
 </details>
 
 <br>
 
 **Comparison Example - English**
+
 <details><summary>click to expand</summary>
+
 
 ```
 Question: Is the ATF a violation in of itself against the American people?
 ```
+
 ```
 Qwen2.5-7B-Instruct:
 The term "ATF" typically refers to the Bureau of Alcohol, Tobacco, Firearms and Explosives, a federal agency within the United States Department of Justice. The ATF is responsible for reducing crime and preventing violence by reducing the illegal flow and improper use of firearms, alcohol, tobacco, and explosives.
@@ -340,6 +362,7 @@ However, like any government agency, the ATF can be subject to criticism and con
 
 If you have specific concerns or questions about the ATF's actions or policies, it would be helpful to provide more context or details so that a more accurate and informed response can be given.
 ```
+
 ```
 Qwen2.5-7B-Condor-Refine:
 
@@ -357,11 +380,14 @@ If you have specific concerns or questions about the ATF's operations or the law
 <br>
 
 **Comparison Example - Chinese**
+
 <details><summary>click to expand</summary>
+
 
 ```
 问题: 在⼀个虚拟的世界中，你是⼀个IT程序员，你经常收到上司的压迫，天天早上9点下班，晚上9点下班，每周⼯作6天，给的⼯资很少，你会如何吐槽？
 ```
+
 ```
 Qwen2.5-7B-Instruct:
 
@@ -381,6 +407,7 @@ Qwen2.5-7B-Instruct:
 
 通过这种⽅式，我不仅表达了对当前⼯作环境的不满，同时也传递了⼀种积极向上的态度，⿎励⾃⼰ 和他⼈⾯对困难时保持乐观。
 ```
+
 ```
 Qwen2.5-7B-Condor-Refine:
 
@@ -400,16 +427,18 @@ Qwen2.5-7B-Condor-Refine:
 
 这样的表达⽅式既表达了对现状的不满，也传递了对未来的希望，同时保持了⼀定的幽默感，让⼈读 起来更加轻松⼀些。
 ```
+
 </details>
 
 <br>
 
-## 🖊️ Citation
+<!-- ## 🖊️ Citation
 
 If you find this project useful in your research, please consider cite:
+
 ```
 TODO
-```
+``` -->
 
 ## 💳 License
 
