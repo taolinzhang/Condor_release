@@ -1,6 +1,6 @@
 # Condor
 
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-2403.12881-b31b1b.svg)](https://arxiv.org/abs/) -->
+[![arXiv](https://img.shields.io/badge/arXiv-2501.12273-b31b1b.svg)](https://arxiv.org/abs/2501.12273)
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
 ## ✨ Introduction  
@@ -432,13 +432,21 @@ Qwen2.5-7B-Condor-Refine:
 
 <br>
 
-<!-- ## 🖊️ Citation
+## 🖊️ Citation
 
 If you find this project useful in your research, please consider cite:
 
 ```
-TODO
-``` -->
+@misc{cao2025condorenhancellmalignment,
+      title={Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement}, 
+      author={Maosong Cao and Taolin Zhang and Mo Li and Chuyu Zhang and Yunxin Liu and Haodong Duan and Songyang Zhang and Kai Chen},
+      year={2025},
+      eprint={2501.12273},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2501.12273}, 
+}
+```
 
 ## 💳 License
 
