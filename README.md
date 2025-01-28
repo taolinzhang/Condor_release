@@ -527,6 +527,48 @@ The datasets and models are available on Huggingface.
 
 ## 📝 Examples
 
+**Condor Question Example**
+
+<details><summary>click to expand</summary>
+
+Role-play
+```
+You are a Deloitte executive preparing a strategic briefing for a global summit. The topic is \"The Future of Corporate Governance in the Age of AI and Automation.\" Role-play your presentation, outlining the potential risks and benefits of AI in corporate governance, and propose a framework for ethical AI integration in multinational corporations.
+```
+
+DailyChat
+```
+I recently worked with Deloitte on a project and was really impressed by their approach to team collaboration. It got me thinking about how important it is to have a strong team spirit in any workplace. Have you ever been part of a project where team dynamics played a crucial role in its success? What was your experience like?
+```
+
+QA
+```
+Deloitte is known for providing a wide range of professional services. Can you outline the main services offered by Deloitte and briefly explain how they support businesses in various industries?
+```
+
+Given Material Processing Category
+```
+Expand the following brief description into a full paragraph, including additional details about Deloitte's impact on the global business landscape and a playful sentence at the end: \"Deloitte has been a leader in providing professional services for over a century.\" Deloitte, one of the Big Four accounting firms, has not only established itself as a leader in auditing and financial advisory services but has also expanded its reach into a wide range of professional services, including consulting, tax, and advisory. With a presence in more than 150 countries, Deloitte serves a diverse client base, from startups to Fortune 500 companies, helping them navigate complex business challenges and capitalize on opportunities in the global market. The firm's commitment to innovation and sustainability has earned it a reputation for excellence and trustworthiness. Deloitte's impact on the global business landscape is evident in the numerous successful projects and transformations it has spearheaded, from optimizing supply chains to enhancing cybersecurity frameworks. As Deloitte continues to grow and adapt to the ever-changing business environment, it remains a steadfast partner to its clients, ensuring that their goals are met with the highest standards of quality and integrity. And, just like a century-old oak tree, Deloitte's roots run deep, but its branches are always reaching for new heights.
+```
+
+Response Format Control Category
+```
+Please create a story that tells of the deep emotional bond between two boys, but do not use the word \"brothers\" or \"brother\" in the story.
+```
+
+View
+```
+How does OkCupid's algorithm use user data to match individuals, and what are the key factors it considers in making these matches? Discuss the basics of how the system operates and how it ensures compatibility between users.
+```
+
+Creation
+```
+Imagine you are a writer for a dating app blog. Create a short personal anecdote titled \"First Impressions on OkCupid\" that highlights a funny or surprising experience you had when first using the app. The story should be light-hearted and engaging, encouraging new users to try the app with an open mind.
+```
+</details>
+
+<br>
+
 **Condor Refine Example - English**
 
 <details><summary>click to expand</summary>
