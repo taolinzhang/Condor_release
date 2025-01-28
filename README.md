@@ -503,14 +503,6 @@ Now it's your turn, please provide your improved answer as required:
 <br>
 
 
-## 🤗 Datasets
-
-The datasets are available.
-
-|        Dataset         |                       link Repo                       |
-| :--------------------: | :----------------------------------------------------------: |
-| Condor-SFT-20K(Refine) | [Dataset Link](./Condor_Refine_20k.json) |
-
 # 📝 Examples
 
 **Condor Question Example**
