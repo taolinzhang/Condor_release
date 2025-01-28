@@ -410,7 +410,20 @@ Condor is a two-stage data synthesis engine adopted in InternLM3, designed to ge
 
 <br>
 
+
 ## 👨🏻‍💻 Prompt for Dataset Construction
+
+
+**Prompt for Tag Synthesis**
+<details><summary>click to expand</summary>
+
+```
+Please provide a list of common life scenarios in python list format, for example ["Education", "Entertainment", "Marriage"]. Continue to expand this list.
+
+For the topic path I have given, please provide multiple corresponding sub-paths and return them in Python list format. For example, for "Entertainment Gossip-Celebrity News", return ["Celebrity Interviews", "Celebrity Charity Events"]. Here is the given topic path: {topic}. Please provide the corresponding sub-paths.
+```
+</details>
+<br>
 
 **Prompt for Question Synthesis**
 
@@ -480,6 +493,24 @@ Now it’s your turn. Please provide your Critique as required:
 </details>
 
 <br>
+
+**Prompt for Refined Response Synthesis**
+<details><summary>click to expand</summary>
+
+```
+Now there is a user's question, a model's answer, and the user's feedback. Please help modify the model's answer based on the user's feedback to make it better.
+Your improved answer must strictly adhere to the following format:
+[Improved Answer Start]Your answer[Improved Answer End]
+That is, you must place your answer between [Improved Answer Start] and [Improved Answer End].
+Below is the user's question, the model's answer, and the feedback:
+[Question Start]{question}[Question End]
+[Answer Start]{answer}[Answer End]
+[Feedback Start]{critique}[Feedback End]
+Now it's your turn, please provide your improved answer as required:
+```
+</details>
+<br>
+
 
 ## 🤗 Datasets and Model Zoo 
 
