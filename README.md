@@ -1,16 +1,6 @@
 # Condor
 
-[![arXiv](https://img.shields.io/badge/arXiv-2501.12273-b31b1b.svg)](https://arxiv.org/abs/2501.12273)
-[![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
-
 ## ✨ Introduction  
-
-[[🤗 HuggingFace Models](https://huggingface.co/internlm/)]
-[[🤗 HuggingFace Datasets](https://hf.co/datasets/internlm/Condor-SFT-20K)]
-[[📃 Paper](./assets/CondorPaper.pdf)]
-<!-- [[📃 Paper](https://arxiv.org/abs/)] -->
-<!-- [[🧰 OpenXLab](https://openxlab.org.cn/models/detail/OpenLMLab/)] -->
-<!-- [[🌐 Project Page](https://internlm.github.io/)] -->
 
 > The quality of Supervised Fine-Tuning (SFT) data plays a critical role in enhancing the conversational capabilities of Large Language Models (LLMs).
 > However, as LLMs become more advanced, 
@@ -41,7 +31,8 @@ Condor is a two-stage data synthesis engine adopted in InternLM3, designed to ge
 
 <details><summary>click to expand</summary>
   
-```json{
+```json
+{
         "Marriage and Relationships": {
             "Dating and Friendship": ["Dating Platforms", "Dating Tips", "Dating Events"],
             "Marriage Management": ["Marital Relationships", "Marriage Law", "Marriage Counseling"],
@@ -512,20 +503,15 @@ Now it's your turn, please provide your improved answer as required:
 <br>
 
 
-## 🤗 Datasets and Model Zoo 
+## 🤗 Datasets
 
-The datasets and models are available on Huggingface.
+The datasets are available.
 
-|        Dataset         |                       Huggingface Repo                       |
+|        Dataset         |                       link Repo                       |
 | :--------------------: | :----------------------------------------------------------: |
-| Condor-SFT-20K(Refine) | [Dataset Link](https://hf.co/datasets/internlm/Condor-SFT-20K) |
+| Condor-SFT-20K(Refine) | [Dataset Link](./Condor_Refine_20k.json) |
 
-<!-- |    Model    |                        Huggingface Repo                        |
-| :---------: | :------------------------------------------------------------: |
-| Condor-7B  | [Model Link](https://huggingface.co/internlm/)  |
-| Condor-72B  | [Model Link](https://huggingface.co/internlm/)  | -->
-
-## 📝 Examples
+# 📝 Examples
 
 **Condor Question Example**
 
@@ -877,23 +863,3 @@ Qwen2.5-7B-Condor-Refine:
 </details>
 
 <br>
-
-## 🖊️ Citation
-
-If you find this project useful in your research, please consider cite:
-
-```
-@misc{cao2025condorenhancellmalignment,
-      title={Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement}, 
-      author={Maosong Cao and Taolin Zhang and Mo Li and Chuyu Zhang and Yunxin Liu and Haodong Duan and Songyang Zhang and Kai Chen},
-      year={2025},
-      eprint={2501.12273},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2501.12273}, 
-}
-```
-
-## 💳 License
-
-This project is released under the Apache 2.0 [license](./LICENSE).
